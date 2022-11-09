@@ -1,0 +1,13 @@
+{
+    "PortaGateway": 3000,
+    "PortaAPISaldo": 3001,
+    "PortaAPITransacao": 3002,
+    "ErroMessage": {
+        "message": "Error. Try request /transacao or /saldo.",
+        "status": 404
+    },
+    "ErroHTML": {
+        "HTML":"<h1>ERRO 404</h1>"
+    },
+    "timeout": 3000
+}

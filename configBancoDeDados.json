@@ -1,0 +1,4 @@
+{
+    "mongoDB": "mongodb+srv://diogo:teste123@cluster0.c4obmdf.mongodb.net/test",
+    "Redis": "..."
+}

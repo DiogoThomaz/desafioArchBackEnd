@@ -1,0 +1,50 @@
+Desafio de código proposto pela ARCH
+
+Objetivo:
+-Programar API de transacao
+-Programar API de saldo
+
+-programar banco de dados de saldo com redis, servirá de cache.
+-programar banco de dados de command com mongo db.
+
+ferramentas: 
+- nodemon testes
+- postman testes
+- express
+- bodyparser
+- mongo db
+- redis
+- pm2
+
+Organização das APIs:
+
+Servidor
+
+As duas APIs, transação e saldo são acionadas atráves do arquivo gateway.js, que 
+está no diretório "gateway.js". Este é o servidor que está escutando na porta 3000.
+Assim, uma vez que uma das duas APIs (Transação ou Saldo) é chamada, o servidor
+executa o microsserviço da API.
+
+As configurações do servidor estão presente no arquivo configServidor.json
+
+
+
+As apis estão organizadas em módulo para facilitar a manutenção e escalonamento.
+
+A API de transação está no diretório "API_Gateway\src\transacao-api\transacaoAPI.js", 
+este arquivo contém todos os módulos para o funcionamento da API.
+
+
+Instrucoes:
+Inicie o gateway com o pm2,
+Inicie as duas outras apis com pm2 (transacaoAPI.js e saldoAPI.js)
+
+Na sequencia faça requisicoes GET: localhost:3000/saldo 
+com um json no body da requisicao {nome: nome, transacao: numero, consulta: true} -> retorna o saldo do usuario.
+com um json no body da requisicao {nome: nome, transacao: numero, consulta: false} -> aciona o command para inserir novo saldo no mongoDB.
+
+Na sequencia faça requisicoes GET: localhost:3000/transacao 
+com um json body no body {nome: nome, transacao: numero} -> para acionar o command para inserir o novo saldo do usuario no banco de dados mongoDB.
+
+
+

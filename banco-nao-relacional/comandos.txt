@@ -1,0 +1,11 @@
+mongod
+mongosh
+
+show dbs
+use wm
+db.createCollection('estado')
+db.estado.drop()
+show collections
+db.estados.insert
+db.estados.find
+db.estados.find().pretty()
